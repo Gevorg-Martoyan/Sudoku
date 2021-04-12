@@ -47,9 +47,9 @@ int main()
       std::cin >> ch;
     }
   }
-  catch(int n)
+  catch(const std::runtime_error& ex)
   {
-    std::cout<<"The entered number "<< n <<" is not in [0-9] range";
+      std::cout<< ex.what();
   }
   return 0;
 }
