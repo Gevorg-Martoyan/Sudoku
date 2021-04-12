@@ -1,4 +1,5 @@
 #include<iostream>
+#include <stdexcept>
 #include "Sudoku.h"
 
 void Sudoku::enterDigits()
@@ -18,9 +19,9 @@ void Sudoku::enterDigits()
                 std::cout << "Wrong input!";
                 return ;
             }
-            if (temp > 9 || temp < 0)
+            if (temp > N || temp < 0)
             {
-                throw temp;
+                throw std::runtime_error("The number is not in range [0-9]");
             }
             board[i][j] = temp;
         }
